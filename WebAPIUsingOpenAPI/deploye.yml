@@ -1,0 +1,51 @@
+﻿name: CI/CD Pipeline for .NET API
+
+on:
+  push:
+    branches:
+      - main  # Runs on push to the main branch
+  pull_request:
+    branches:
+      - main  # Runs on pull requests to main
+
+jobs:
+  build:
+    runs-on: windows-latest # Change to windows-latest if deploying on Windows
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: 8.0.x  # Change to your .NET version
+
+      - name: Restore Dependencies
+        run: dotnet restore
+
+      - name: Build Solution
+        run: dotnet build --configuration Release --no-restore
+
+      - name: Run Tests
+        run: dotnet test --configuration Release --no-restore --verbosity normal
+
+  deploy:
+    needs: build  # Deploy only if build is successful
+    runs-on: windows-latest # Change to ubuntu-latest if deploying on Linux
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: 8.0.x
+
+      - name: Publish Project
+        run: dotnet publish -c Release -o ./publish
+
+      - name: Deploy to IIS Server
+        run: |
+          echo "Deploying to IIS Server..."
+          # Here you can add deployment scripts (e.g., FTP upload, Azure, or self-hosted)
+
