@@ -41,9 +41,8 @@ name: Deploy to IIS Server
 on:
   push:
     branches:
-      - main  # Change to your branch if needed
-      
-    workflow_dispatch:  # Enables manual trigger from GitHub UI
+      - main  # Adjust if using a different branch
+  workflow_dispatch:  # Enables manual trigger from GitHub UI from GitHub UI
 
 jobs:
   build-and-deploy:
