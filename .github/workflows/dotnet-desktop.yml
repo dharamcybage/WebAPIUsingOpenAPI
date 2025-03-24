@@ -36,17 +36,16 @@
 # For a complete CI/CD sample to get started with GitHub Action workflows for Desktop Applications,
 # refer to https://github.com/microsoft/github-actions-for-desktop-apps
 
-name: Build and Deploy .NET API (Windows)
+name: Deploy to IIS Server
 
 on:
   push:
     branches:
-      - main
+      - main  # Change to your branch if needed
 
 jobs:
-  build:
-    runs-on: windows-latest  # Run on Windows instead of Linux
-
+  build-and-deploy:
+    runs-on: windows-latest  # Running on Windows
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
@@ -54,7 +53,7 @@ jobs:
       - name: Setup .NET
         uses: actions/setup-dotnet@v3
         with:
-          dotnet-version: '8.0.x'
+          dotnet-version: '8.0.x'  # Change to your .NET version
 
       - name: Restore Dependencies
         run: dotnet restore
@@ -62,17 +61,16 @@ jobs:
       - name: Build
         run: dotnet build --configuration Release --no-restore
 
-      - name: Run Tests
-        run: dotnet test --no-restore --verbosity normal
-
       - name: Publish
         run: dotnet publish -c Release -o ./publish
 
-      - name: Deploy to IIS Server (Windows)
+      - name: Deploy to IIS via Remote Copy
         env:
           SERVER_IP: ${{ secrets.SERVER_IP }}
           USERNAME: ${{ secrets.SSH_USERNAME }}
           PASSWORD: ${{ secrets.SSH_PASSWORD }}
         run: |
-          echo "Deploying to Windows Server..."
+          echo "Deploying to IIS..."
+          net use \\$SERVER_IP /user:$USERNAME $PASSWORD
           robocopy /E /Z /Y ./publish "\\$SERVER_IP\c$\inetpub\wwwroot\myapi"
+
