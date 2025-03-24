@@ -41,8 +41,12 @@ name: Deploy to IIS Server
 on:
   push:
     branches:
-      - main  # Adjust if using a different branch
-  workflow_dispatch:  # Enables manual trigger from GitHub UI from GitHub UI
+      - main  # Runs when code is pushed to main (including after PR merge)
+  pull_request:
+    branches:
+      - main  # Runs when a PR is opened/merged into main
+  workflow_dispatch:  # Allows manual execution
+
 
 jobs:
   build-and-deploy:
