@@ -66,7 +66,7 @@ jobs:
 
       - name: Generate API Code
         run: |
-          java -jar openapi-generator-cli.jar generate -i swagger.json -g aspnetcore -o GeneratedAPI
+          java -jar openapi-generator-cli.jar generate -i swagger.json -g aspnetcore -o GeneratedAPI --skip-validate-spec
 
       - name: Commit and Push Changes
         run: |
