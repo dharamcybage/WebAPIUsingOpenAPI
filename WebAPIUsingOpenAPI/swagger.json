@@ -20442,7 +20442,8 @@
                     "name",
                     "order",
                     "premium",
-                    "visibleForEveryone"
+                    "visibleForEveryone",
+                    "notVisibleToAll"
                 ],
                 "type": "object",
                 "properties": {
