@@ -20443,7 +20443,7 @@
                     "order",
                     "premium",
                     "visibleForEveryone",
-                    "notVisible"
+                    "notVisibleOnly"
                 ],
                 "type": "object",
                 "properties": {
