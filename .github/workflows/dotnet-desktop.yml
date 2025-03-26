@@ -41,11 +41,11 @@ name: Deploy to IIS Server
 on:
   push:
     branches:
-      - main  # Runs when code is pushed to main (including after PR merge)
+      - master  # Runs when code is pushed to main (including after PR merge)
   pull_request:
     types: [closed] 
     branches:
-      - main  # Runs when a PR is opened/merged into main
+      - master  # Runs when a PR is opened/merged into main
   workflow_dispatch:  # Allows manual execution
 
 
