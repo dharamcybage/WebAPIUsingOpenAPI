@@ -67,7 +67,9 @@ jobs:
       - name: Generate API Code
         run: |
           java -jar openapi-generator-cli.jar generate -i WebAPIUsingOpenAPI/swagger.json -g aspnetcore -o WebAPIUsingOpenAPI/VectoryPathwayAPI --skip-validate-spec
-
+          git remote -v
+          git config --list
+          
       - name: Commit and Push Changes
         run: |
           git config --global user.name "github-actions[bot]"
@@ -75,8 +77,11 @@ jobs:
           git add WebAPIUsingOpenAPI/VectoryPathwayAPI/*
           git commit -m "Auto-generate API code from updated swagger.json" || echo "No changes to commit"
           git push https://github.com/dharamcybage/WebAPIUsingOpenAPI.git
+          git remote -v
+          git config --list
 
         env:
           PAT: ${{ secrets.PAT }}  # Use the stored secret token
+          
 
 
