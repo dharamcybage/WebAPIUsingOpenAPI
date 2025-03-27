@@ -18,7 +18,7 @@ using Swashbuckle.AspNetCore.Annotations;
 using Swashbuckle.AspNetCore.SwaggerGen;
 using Newtonsoft.Json;
 using Org.OpenAPITools.Attributes;
-using Swashbuckle.Swagger.Annotations; using Org.OpenAPITools.Models;
+ using Org.OpenAPITools.Models;
 
 namespace Org.OpenAPITools.Controllers
 { 
