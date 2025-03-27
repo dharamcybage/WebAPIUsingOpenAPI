@@ -78,5 +78,6 @@ jobs:
         run: |
           echo "Deploying to IIS..."
           net use \\$SERVER_IP /user:$USERNAME $PASSWORD
-          robocopy /E /Z /Y ./publish "\\$SERVER_IP\c$\inetpub\wwwroot\myapi"
+          robocopy ./publish "\\$SERVER_IP\c$\inetpub\wwwroot\myapi" /E /Z /R:3 /W:5
+
 
