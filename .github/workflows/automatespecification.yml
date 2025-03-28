@@ -41,12 +41,9 @@ name: Generate API from Swagger
 on:
   push:
     paths:
-      - "swagger.json"
-  pull_request:
-    types: [closed]
-    paths:
-      - "swagger.json"  # Runs only if swagger.json was modified in the PR
-  workflow_dispatch:
+      - "swagger.json"  # Only triggers if swagger.json changes
+  workflow_dispatch:  # Allows manual execution
+
 
 jobs:
   generate-api:
