@@ -7,6 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include="VectoryPathwayAPI\.openapi-generator\FILES" />
+    <None Include="VectoryPathwayAPI\.openapi-generator\VERSION" />
+    <None Include="VectoryPathwayAPI\Org.OpenAPITools.sln" />
+    <None Include="VectoryPathwayAPI\src\Org.OpenAPITools\Org.OpenAPITools.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Swashbuckle.AspNetCore" Version="8.0.0" />
     <PackageReference Include="Swashbuckle.AspNetCore.Annotations" Version="8.0.0" />
     <PackageReference Include="Swashbuckle.AspNetCore.Newtonsoft" Version="8.0.0" />
