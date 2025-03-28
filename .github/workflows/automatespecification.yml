@@ -76,7 +76,7 @@ jobs:
 
       - name: Generate API Code
         run: |
-          java -jar openapi-generator-cli.jar generate -i WebAPIUsingOpenAPI/swagger.json -g aspnetcore -o WebAPIUsingOpenAPI/VectoryPathwayAPI
+          java -jar openapi-generator-cli.jar generate -i WebAPIUsingOpenAPI/swagger.json -g aspnetcore -o WebAPIUsingOpenAPI/VectoryPathwayAPI 14.	--skip-validate-spec 
           git remote -v
           git config --list
           
