@@ -94,62 +94,62 @@ namespace Org.OpenAPITools.Controllers
         /// <param name="authorization"></param>
         /// <response code="200">OK</response>
         /// <response code="404">Not found</response>
-        [HttpGet]
-        [Route("/Super User/api/consumer/v1/super-user/one-roster/{one_roster_configs}")]
-        [ValidateModelState]
-        [SwaggerOperation("GetSuperUserApiConsumerV1SuperUserOneRosterByOneRosterConfigs")]
-        [SwaggerResponse(statusCode: 200, type: typeof(List<Org>), description: "OK")]
-        public virtual IActionResult GetSuperUserApiConsumerV1SuperUserOneRosterByOneRosterConfigs([FromRoute (Name = "one_roster_configs")][Required]string oneRosterConfigs, [FromHeader (Name = "Authorization")]string authorization)
-        {
+        //[HttpGet]
+        //[Route("/Super User/api/consumer/v1/super-user/one-roster/{one_roster_configs}")]
+        //[ValidateModelState]
+        //[SwaggerOperation("GetSuperUserApiConsumerV1SuperUserOneRosterByOneRosterConfigs")]
+        //[SwaggerResponse(statusCode: 200, type: typeof(List<Org>), description: "OK")]
+        //public virtual IActionResult GetSuperUserApiConsumerV1SuperUserOneRosterByOneRosterConfigs([FromRoute (Name = "one_roster_configs")][Required]string oneRosterConfigs, [FromHeader (Name = "Authorization")]string authorization)
+        //{
 
-            //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
-            // return StatusCode(200, default(List<Org>));
-            //TODO: Uncomment the next line to return response 404 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
-            // return StatusCode(404);
-            string exampleJson = null;
-            exampleJson = "[ {\r\n  \"sourcedId\" : \"sourcedId\",\r\n  \"status\" : \"status\"\r\n}, {\r\n  \"sourcedId\" : \"sourcedId\",\r\n  \"status\" : \"status\"\r\n} ]";
+        //    //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
+        //    // return StatusCode(200, default(List<Org>));
+        //    //TODO: Uncomment the next line to return response 404 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
+        //    // return StatusCode(404);
+        //    string exampleJson = null;
+        //    exampleJson = "[ {\r\n  \"sourcedId\" : \"sourcedId\",\r\n  \"status\" : \"status\"\r\n}, {\r\n  \"sourcedId\" : \"sourcedId\",\r\n  \"status\" : \"status\"\r\n} ]";
             
-            var example = exampleJson != null
-            ? JsonConvert.DeserializeObject<List<Org>>(exampleJson)
-            : default(List<Org>);
-            //TODO: Change the data returned
-            return new ObjectResult(example);
-        }
+        //    var example = exampleJson != null
+        //    ? JsonConvert.DeserializeObject<List<Org>>(exampleJson)
+        //    : default(List<Org>);
+        //    //TODO: Change the data returned
+        //    return new ObjectResult(example);
+        //}
 
-        /// <summary>
-        /// Super User
-        /// </summary>
-        /// <remarks>Super User</remarks>
-        /// <param name="districts"></param>
-        /// <param name="updateDistrictSuperUserAuthRequest"></param>
-        /// <param name="authorization"></param>
-        /// <response code="200">OK</response>
-        /// <response code="404">Not found</response>
-        [HttpPatch]
-        [Route("/Super User/api/consumer/v1/super-user/auth/{districts}")]
-        [Consumes("application/json")]
-        [ValidateModelState]
-        [SwaggerOperation("PatchSuperUserApiConsumerV1SuperUserAuthByDistricts")]
-        [SwaggerResponse(statusCode: 200, type: typeof(long), description: "OK")]
-        public virtual IActionResult PatchSuperUserApiConsumerV1SuperUserAuthByDistricts([FromRoute (Name = "districts")][Required]string districts, [FromBody]UpdateDistrictSuperUserAuthRequest updateDistrictSuperUserAuthRequest, [FromHeader (Name = "Authorization")]string authorization)
-        {
+        ///// <summary>
+        ///// Super User
+        ///// </summary>
+        ///// <remarks>Super User</remarks>
+        ///// <param name="districts"></param>
+        ///// <param name="updateDistrictSuperUserAuthRequest"></param>
+        ///// <param name="authorization"></param>
+        ///// <response code="200">OK</response>
+        ///// <response code="404">Not found</response>
+        //[HttpPatch]
+        //[Route("/Super User/api/consumer/v1/super-user/auth/{districts}")]
+        //[Consumes("application/json")]
+        //[ValidateModelState]
+        //[SwaggerOperation("PatchSuperUserApiConsumerV1SuperUserAuthByDistricts")]
+        //[SwaggerResponse(statusCode: 200, type: typeof(long), description: "OK")]
+        //public virtual IActionResult PatchSuperUserApiConsumerV1SuperUserAuthByDistricts([FromRoute (Name = "districts")][Required]string districts, [FromBody]UpdateDistrictSuperUserAuthRequest updateDistrictSuperUserAuthRequest, [FromHeader (Name = "Authorization")]string authorization)
+        //{
 
-            //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
-            // return StatusCode(200, default(long));
-            //TODO: Uncomment the next line to return response 404 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
-            // return StatusCode(404);
-            string exampleJson = null;
+        //    //TODO: Uncomment the next line to return response 200 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
+        //    // return StatusCode(200, default(long));
+        //    //TODO: Uncomment the next line to return response 404 or use other options such as return this.NotFound(), return this.BadRequest(..), ...
+        //    // return StatusCode(404);
+        //    string exampleJson = null;
             
-            var example = exampleJson != null
-            ? JsonConvert.DeserializeObject<long>(exampleJson)
-            : default(long);
-            //TODO: Change the data returned
-            return new ObjectResult(example);
-        }
+        //    var example = exampleJson != null
+        //    ? JsonConvert.DeserializeObject<long>(exampleJson)
+        //    : default(long);
+        //    //TODO: Change the data returned
+        //    return new ObjectResult(example);
+        //}
 
-        /// <summary>
-        /// Super User
-        /// </summary>
+        ///// <summary>
+        ///// Super User
+        ///// </summary>
         /// <remarks>Super User</remarks>
         /// <param name="oneRosterConfigs"></param>
         /// <param name="createOneRosterRequest"></param>

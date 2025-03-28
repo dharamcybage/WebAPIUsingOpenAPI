@@ -125,11 +125,6 @@ namespace Org.OpenAPITools.Models
         [DataMember(Name="rejected_by", EmitDefaultValue=true)]
         public long? RejectedBy { get; set; }
 
-        /// <summary>
-        /// Gets or Sets ApprovedBy
-        /// </summary>
-        [DataMember(Name="approved_by", EmitDefaultValue=true)]
-        public long? ApprovedBy { get; set; }
 
         /// <summary>
         /// Gets or Sets User
@@ -152,11 +147,6 @@ namespace Org.OpenAPITools.Models
         [DataMember(Name="parentsRejected", EmitDefaultValue=true)]
         public bool ParentsRejected { get; set; }
 
-        /// <summary>
-        /// Gets or Sets RejectedBy
-        /// </summary>
-        [DataMember(Name="rejectedBy", EmitDefaultValue=false)]
-        public BasicUser RejectedBy { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
