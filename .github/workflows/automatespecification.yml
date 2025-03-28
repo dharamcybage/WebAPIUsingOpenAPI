@@ -50,7 +50,9 @@ on:
       - master
     paths:
       -  WebAPIUsingOpenAPI/swagger.json  # Triggers only if swagger.json was modified in PR
-
+      
+permissions:
+  contents: write  # 👈 This gives GitHub Actions permission to push
 
 jobs:
   generate-api:
@@ -89,7 +91,7 @@ jobs:
           git config --list
 
         env:
-          PAT: ${{ secrets.PAT }}  # Use the stored secret token
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Use GitHub-provided token
           
 
 
