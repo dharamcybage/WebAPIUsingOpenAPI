@@ -40,9 +40,16 @@ name: Generate API from Swagger
 
 on:
   push:
+    branches:
+      - master
     paths:
-      - "swagger.json"  # Only triggers if swagger.json changes
-  workflow_dispatch:  # Allows manual execution
+      - "swagger.json"  # Triggers only if swagger.json is modified
+  pull_request:
+    types: [closed] 
+    branches:
+      - master
+    paths:
+      - "swagger.json"  # Triggers only if swagger.json was modified in PR
 
 
 jobs:
