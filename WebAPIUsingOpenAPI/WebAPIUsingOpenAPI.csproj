@@ -12,8 +12,4 @@
     <PackageReference Include="Swashbuckle.AspNetCore.Newtonsoft" Version="8.0.0" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="VectoryPathwayAPI\" />
-  </ItemGroup>
-
 </Project>
