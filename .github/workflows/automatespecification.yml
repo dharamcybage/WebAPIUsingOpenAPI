@@ -40,15 +40,13 @@ name: Generate API from Swagger
 
 on:
   push:
-    branches:
-      - master  # Runs when code is pushed to main (including after PR merge)
     paths:
-      - "swagger.json"  # Runs only when swagger.json changes
+      - "swagger.json"
   pull_request:
-    types: [closed] 
-    branches:
-      - master  # Runs when a PR is opened/merged into main
-  workflow_dispatch:  # Allows manual execution
+    types: [closed]
+    paths:
+      - "swagger.json"  # Runs only if swagger.json was modified in the PR
+  workflow_dispatch:
 
 jobs:
   generate-api:
