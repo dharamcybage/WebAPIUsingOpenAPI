@@ -43,13 +43,13 @@ on:
     branches:
       - master
     paths:
-      - "swagger.json"  # Triggers only if swagger.json is modified
+      -  WebAPIUsingOpenAPI/swagger.json  # Triggers only if swagger.json is modified
   pull_request:
     types: [closed] 
     branches:
       - master
     paths:
-      - "swagger.json"  # Triggers only if swagger.json was modified in PR
+      -  WebAPIUsingOpenAPI/swagger.json  # Triggers only if swagger.json was modified in PR
 
 
 jobs:
